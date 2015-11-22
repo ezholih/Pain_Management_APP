@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "UserAccount.h"
 #import "AppDelegate.h"
+#import "CreatProfileViewController.h"
 
 @interface ViewController : UIViewController<UITextFieldDelegate,UIApplicationDelegate>
 {

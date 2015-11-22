@@ -150,7 +150,7 @@
     return YES;
 }
 
--(BOOL)checkUserProfile{
+-(void)checkUserProfile{
     NSDictionary *newData = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithLong:self.ua.userId],@"userid",self.ua.username,@"username",self.ua.password,nil];
     NSData * dataVal = [NSJSONSerialization dataWithJSONObject:newData options:kNilOptions error:nil];
     
@@ -193,7 +193,6 @@
         
     }
     
-    return NO;
 }
 #pragma mark - Navigation
 
@@ -202,6 +201,8 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     if ([segue.identifier isEqualToString:@"creat_profile"]) {
+        CreatProfileViewController *cpvc = (CreatProfileViewController *)[segue destinationViewController];
+        cpvc.ua = self.ua;
         NSLog(@"Move to profile");
     }
     if([segue.identifier isEqualToString:@"login_success"]){

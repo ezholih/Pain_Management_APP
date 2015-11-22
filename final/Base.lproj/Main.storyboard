@@ -130,10 +130,10 @@
             </objects>
             <point key="canvasLocation" x="-963" y="396"/>
         </scene>
-        <!--View Controller-->
+        <!--Creat Profile View Controller-->
         <scene sceneID="joO-my-8NY">
             <objects>
-                <viewController id="LuR-cC-ZLT" sceneMemberID="viewController">
+                <viewController id="LuR-cC-ZLT" customClass="CreatProfileViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pbB-NO-xDb"/>
                         <viewControllerLayoutGuide type="bottom" id="arT-oR-DPm"/>
@@ -143,7 +143,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg18.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="T3S-5U-Nz5">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="763"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

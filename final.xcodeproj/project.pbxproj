@@ -108,6 +108,7 @@
 		B140C0451BF1759900091C51 /* Instrcutions.m in Sources */ = {isa = PBXBuildFile; fileRef = B140C0441BF1759900091C51 /* Instrcutions.m */; };
 		B140C0481BF1817A00091C51 /* QuestionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B140C0471BF1817A00091C51 /* QuestionModel.m */; };
 		B140C04B1BF186E000091C51 /* Questions.m in Sources */ = {isa = PBXBuildFile; fileRef = B140C04A1BF186E000091C51 /* Questions.m */; };
+		B1BA30191C01686E00A447BF /* CreatProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1BA30181C01686E00A447BF /* CreatProfileViewController.m */; };
 		B1D9512F1C01485F00CE1171 /* MedicationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D9512E1C01485F00CE1171 /* MedicationListViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -266,6 +267,8 @@
 		B140C0471BF1817A00091C51 /* QuestionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionModel.m; sourceTree = "<group>"; };
 		B140C0491BF186E000091C51 /* Questions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Questions.h; sourceTree = "<group>"; };
 		B140C04A1BF186E000091C51 /* Questions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Questions.m; sourceTree = "<group>"; };
+		B1BA30171C01686E00A447BF /* CreatProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatProfileViewController.h; sourceTree = "<group>"; };
+		B1BA30181C01686E00A447BF /* CreatProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatProfileViewController.m; sourceTree = "<group>"; };
 		B1D9512D1C01484A00CE1171 /* MedicationListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicationListViewController.h; sourceTree = "<group>"; };
 		B1D9512E1C01485F00CE1171 /* MedicationListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicationListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -388,6 +391,8 @@
 				188B2DF41B0D59090074CCCF /* EmailViewController.m */,
 				18F233BC1B068C2300362D1C /* EditProfileViewController.h */,
 				18F233BD1B068C2300362D1C /* EditProfileViewController.m */,
+				B1BA30171C01686E00A447BF /* CreatProfileViewController.h */,
+				B1BA30181C01686E00A447BF /* CreatProfileViewController.m */,
 				940370F21AF011FE00843460 /* Main.storyboard */,
 				940370F51AF011FE00843460 /* Images.xcassets */,
 				940370F71AF011FE00843460 /* LaunchScreen.xib */,
@@ -697,6 +702,7 @@
 				B140C04B1BF186E000091C51 /* Questions.m in Sources */,
 				94FAFDE11AF46A64008C54BF /* PatientMedicine.m in Sources */,
 				947CD51D1AF343570001D28A /* MainViewController.m in Sources */,
+				B1BA30191C01686E00A447BF /* CreatProfileViewController.m in Sources */,
 				180136111B1B59B00025B126 /* MedicineFeedback.m in Sources */,
 				94FAFDD81AF469FC008C54BF /* SubCategory.m in Sources */,
 				940371481AF0601500843460 /* DecisionViewController.m in Sources */,
