@@ -701,7 +701,7 @@ Phone:(617) 638-8000</string>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="G76-J9-sb2" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="nRd-fA-4cF"/>
+                                    <segue destination="Fg5-pe-b4s" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="bfq-cA-t7h"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="aboutus" rowHeight="50" id="u5r-wT-sxG">
@@ -795,7 +795,7 @@ Phone:(617) 638-8000</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xby-q0-Wck" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1833" y="-827"/>
+            <point key="canvasLocation" x="1882" y="-827"/>
         </scene>
         <!--Medication View Controller-->
         <scene sceneID="fHn-LP-5Rr">
@@ -833,7 +833,7 @@ Phone:(617) 638-8000</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ar-wY-o6H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2431" y="-1507"/>
+            <point key="canvasLocation" x="3243" y="-1507"/>
         </scene>
         <!--Medicine Details View Controller-->
         <scene sceneID="USc-l3-HHH">
@@ -1005,7 +1005,44 @@ Phone:(617) 638-8000</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TxM-Jr-KvE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2858" y="-1507"/>
+            <point key="canvasLocation" x="3670" y="-1507"/>
+        </scene>
+        <!--Medication List View Controller-->
+        <scene sceneID="obP-3A-QFM">
+            <objects>
+                <tableViewController id="8xB-hf-jz2" customClass="MedicationListViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="BG4-MN-Oag">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="name" id="Hbm-rA-nIW">
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hbm-rA-nIW" id="PIq-oZ-tsq">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="8xB-hf-jz2" id="Mgh-TW-jDV"/>
+                            <outlet property="delegate" destination="8xB-hf-jz2" id="hAU-EB-H6A"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="wyZ-Ix-DLZ">
+                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="XNX-kv-vT8"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="sidebarButton" destination="XNX-kv-vT8" id="NAB-qM-d6u"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G9s-md-zai" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2286" y="-1507"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xxZ-0j-fu0">
@@ -1022,7 +1059,7 @@ Phone:(617) 638-8000</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lv7-4U-J1C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1962" y="-1507"/>
+            <point key="canvasLocation" x="2774" y="-1507"/>
         </scene>
         <!--Email View Controller-->
         <scene sceneID="OsF-YB-OT2">
@@ -1320,17 +1357,12 @@ Phone:(617) 638-8000</string>
                             <outlet property="delegate" destination="lYU-X3-4BE" id="BAE-J4-QGw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="fAi-0S-VOj">
-                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="teh-hy-l7G"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="fAi-0S-VOj"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <connections>
-                        <outlet property="sidebarButton" destination="teh-hy-l7G" id="949-sw-zp1"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hrw-V0-cak" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2431" y="-1507"/>
+            <point key="canvasLocation" x="3243" y="-1507"/>
         </scene>
         <!--Medicine Details View Controller-->
         <scene sceneID="id6-r7-xIQ">
@@ -1479,7 +1511,7 @@ Phone:(617) 638-8000</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d2O-Pc-ePL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2858" y="-1507"/>
+            <point key="canvasLocation" x="3670" y="-1507"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HB8-SG-vqz">
@@ -1496,7 +1528,7 @@ Phone:(617) 638-8000</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zml-GN-zbu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1962" y="-1507"/>
+            <point key="canvasLocation" x="2774" y="-1507"/>
         </scene>
         <!--Medication View Controller-->
         <scene sceneID="y83-V4-nZC">
@@ -1529,7 +1561,7 @@ Phone:(617) 638-8000</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5AQ-r9-RXF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2431" y="-1507"/>
+            <point key="canvasLocation" x="3243" y="-1507"/>
         </scene>
         <!--Medicine Details View Controller-->
         <scene sceneID="Bdz-AH-L2n">
@@ -1691,7 +1723,7 @@ Phone:(617) 638-8000</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dUT-Es-ddv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2858" y="-1507"/>
+            <point key="canvasLocation" x="3670" y="-1507"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Mgs-di-JWw">
@@ -1708,7 +1740,7 @@ Phone:(617) 638-8000</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ayY-3x-16V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1962" y="-1507"/>
+            <point key="canvasLocation" x="2774" y="-1507"/>
         </scene>
         <!--Medication View Controller-->
         <scene sceneID="hHR-uf-XC5">
@@ -1746,7 +1778,7 @@ Phone:(617) 638-8000</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RmV-LH-47o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2431" y="-1507"/>
+            <point key="canvasLocation" x="3243" y="-1507"/>
         </scene>
         <!--Medicine Details View Controller-->
         <scene sceneID="qxb-pg-Jwe">
@@ -1908,7 +1940,7 @@ Phone:(617) 638-8000</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AoF-Ry-ON1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2858" y="-1507"/>
+            <point key="canvasLocation" x="3670" y="-1507"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DP4-dX-w8Q">
@@ -1925,7 +1957,7 @@ Phone:(617) 638-8000</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lRX-mp-Xdj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1962" y="-1507"/>
+            <point key="canvasLocation" x="2774" y="-1507"/>
         </scene>
         <!--Medication View Controller-->
         <scene sceneID="dBL-Kb-WZ5">
@@ -1958,7 +1990,7 @@ Phone:(617) 638-8000</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3JL-c5-cXV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2431" y="-1507"/>
+            <point key="canvasLocation" x="3243" y="-1507"/>
         </scene>
         <!--Medicine Details View Controller-->
         <scene sceneID="bqz-UR-Tlt">
@@ -2124,7 +2156,7 @@ Phone:(617) 638-8000</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e5K-ed-ExE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2858" y="-1507"/>
+            <point key="canvasLocation" x="3670" y="-1507"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Wea-3b-TEi">
@@ -2141,7 +2173,7 @@ Phone:(617) 638-8000</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1kp-jc-TTn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1962" y="-1507"/>
+            <point key="canvasLocation" x="2774" y="-1507"/>
         </scene>
         <!--My Profile View Controller-->
         <scene sceneID="Onm-e9-aTk">
@@ -2194,6 +2226,25 @@ Phone:(617) 638-8000</string>
             </objects>
             <point key="canvasLocation" x="1645" y="647"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="YQx-CM-kn9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fg5-pe-b4s" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="X56-8b-AJM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8xB-hf-jz2" kind="relationship" relationship="rootViewController" id="24z-4y-Ehg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="67l-r4-dc2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1903" y="-1507"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Medical_icons-02-512.png" width="512" height="508"/>
@@ -2216,6 +2267,6 @@ Phone:(617) 638-8000</string>
     <inferredMetricsTieBreakers>
         <segue reference="WdJ-Sf-MLy"/>
         <segue reference="4c3-Ek-0QJ"/>
-        <segue reference="492-hJ-sYG"/>
+        <segue reference="586-mb-k2b"/>
     </inferredMetricsTieBreakers>
 </document>

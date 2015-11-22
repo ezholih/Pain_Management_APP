@@ -108,6 +108,7 @@
 		B140C0451BF1759900091C51 /* Instrcutions.m in Sources */ = {isa = PBXBuildFile; fileRef = B140C0441BF1759900091C51 /* Instrcutions.m */; };
 		B140C0481BF1817A00091C51 /* QuestionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B140C0471BF1817A00091C51 /* QuestionModel.m */; };
 		B140C04B1BF186E000091C51 /* Questions.m in Sources */ = {isa = PBXBuildFile; fileRef = B140C04A1BF186E000091C51 /* Questions.m */; };
+		B1D9512F1C01485F00CE1171 /* MedicationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D9512E1C01485F00CE1171 /* MedicationListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -265,6 +266,8 @@
 		B140C0471BF1817A00091C51 /* QuestionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionModel.m; sourceTree = "<group>"; };
 		B140C0491BF186E000091C51 /* Questions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Questions.h; sourceTree = "<group>"; };
 		B140C04A1BF186E000091C51 /* Questions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Questions.m; sourceTree = "<group>"; };
+		B1D9512D1C01484A00CE1171 /* MedicationListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicationListViewController.h; sourceTree = "<group>"; };
+		B1D9512E1C01485F00CE1171 /* MedicationListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicationListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -353,6 +356,8 @@
 				18C6D6EE1B5AD7F600EACC73 /* MyProfileViewController.m */,
 				94FAFDC21AF42899008C54BF /* MedicationViewController.h */,
 				94FAFDC31AF42899008C54BF /* MedicationViewController.m */,
+				B1D9512D1C01484A00CE1171 /* MedicationListViewController.h */,
+				B1D9512E1C01485F00CE1171 /* MedicationListViewController.m */,
 				947CD50E1AF336930001D28A /* SidebarViewController.h */,
 				947CD50F1AF336930001D28A /* SidebarViewController.m */,
 				947CD5101AF336930001D28A /* MapViewController.h */,
@@ -696,6 +701,7 @@
 				94FAFDD81AF469FC008C54BF /* SubCategory.m in Sources */,
 				940371481AF0601500843460 /* DecisionViewController.m in Sources */,
 				6B8354C41AF2C99500E68D33 /* QuestionViewController.m in Sources */,
+				B1D9512F1C01485F00CE1171 /* MedicationListViewController.m in Sources */,
 				18F233BE1B068C2300362D1C /* EditProfileViewController.m in Sources */,
 				940370F11AF011FE00843460 /* ViewController.m in Sources */,
 				188B2DF51B0D590A0074CCCF /* EmailViewController.m in Sources */,
