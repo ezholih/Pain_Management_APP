@@ -7,11 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DecisionViewController.h"
+#import "UserAccount.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+//@class DropDownDemoViewController;
+
+@interface AppDelegate : UIResponder <UIApplicationDelegate>{
+     //DropDownDemoViewController *viewController;
+    UserAccount *loginDetails;
+}
 
 @property (strong, nonatomic) UIWindow *window;
-
+//@property (nonatomic, retain) IBOutlet DropDownDemoViewController *viewController;
+@property(strong,nonatomic)UserAccount *loginDetails;
 
 @end
 
