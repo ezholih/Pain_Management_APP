@@ -169,25 +169,6 @@
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    // Get the new view controller using [segue destinationViewController].
-//    // Pass the selected object to the new view controller.
-//    if([segue.identifier isEqualToString:@"medicineDetails"]){
-//        MedicineDetailsViewController *mdvc = (MedicineDetailsViewController *)[segue destinationViewController];
-//        mdvc.delegate = self;
-//        mdvc.data = [jsonData objectAtIndex:self.tableView.indexPathForSelectedRow.row];
-//        mdvc.ua = self.ua;
-//        
-//    }
-//    
-//}
-
-//-(void)medicationViewController:(MedicineDetailsViewController *)mvc didChooseValue:(UserAccount *)ua1{
-//    self.ua = ua1;
-//    [self.navigationController popViewControllerAnimated:YES];
-//    //[self viewDidLoad];
-//}
 
 /*
 #pragma mark - Navigation
