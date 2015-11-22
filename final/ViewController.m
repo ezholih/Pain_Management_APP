@@ -107,8 +107,7 @@
                     delegate.loginDetails.userId = success;
                     delegate.loginDetails.username = self.usernameTxt.text;
                     
-                    
-                    [self performSegueWithIdentifier:@"login_success" sender:self];
+                    [self checkUserProfile];
                     NSLog(@"Login SUCCESS");
                 } else {
                     
@@ -151,13 +150,60 @@
     return YES;
 }
 
-
+-(BOOL)checkUserProfile{
+    NSDictionary *newData = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithLong:self.ua.userId],@"userid",self.ua.username,@"username",self.ua.password,nil];
+    NSData * dataVal = [NSJSONSerialization dataWithJSONObject:newData options:kNilOptions error:nil];
+    
+    NSString *stringUrl = [NSString stringWithFormat:@"%@patientproflie",Url];
+    NSURL *url = [NSURL URLWithString:stringUrl];
+    
+    NSLog(stringUrl);
+    
+    //NSURL *url = [NSURL URLWithString:@"http://localhost:8080/finalproject/programs"];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    
+    
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [request setValue:[NSString stringWithFormat:@"%ul",(unsigned)[dataVal length]] forHTTPHeaderField:@"Content-length"];
+    [request setHTTPBody:dataVal];
+    
+//    NSLog(@"JSON summary : %@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+    
+    NSHTTPURLResponse *response = nil;
+    
+    NSData *result = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
+    
+    if ([response statusCode] >= 200 && [response statusCode] < 300)
+    {
+        NSString *responseData = [[NSString alloc]initWithData:result encoding:NSUTF8StringEncoding];
+        NSLog(@"Response ==> %@", responseData);
+        
+        id objects = [NSJSONSerialization JSONObjectWithData:result options:kNilOptions error:nil];
+        
+        NSString *firstName = [objects objectForKey:@"firstname"];
+        if (firstName) {
+            [self performSegueWithIdentifier:@"login_success" sender:self];
+        }else{
+            [self performSegueWithIdentifier:@"creat_profile" sender:self];
+        }
+        
+        
+    }
+    
+    return NO;
+}
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"creat_profile"]) {
+        NSLog(@"Move to profile");
+    }
     if([segue.identifier isEqualToString:@"login_success"]){
         DecisionViewController *dvc= (DecisionViewController*)[segue destinationViewController];
         dvc.ua =self.ua;
