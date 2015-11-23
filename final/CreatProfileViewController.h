@@ -11,12 +11,15 @@
 #import "PatientProfile.h"
 #import "Constants.h"
 
-@interface CreatProfileViewController : UIViewController<UITextFieldDelegate>
+@interface CreatProfileViewController : UIViewController<UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
 {
     UserAccount *ua;
     PatientProfile *profile;
+    NSInteger selectedRow;
 }
 
+@property NSInteger selectedRow;
+@property(strong, nonatomic)NSMutableArray *doctorList;
 @property(strong, nonatomic)UserAccount *ua;
 @property(strong, nonatomic)PatientProfile *profile;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -36,4 +39,5 @@
 @property (weak, nonatomic) IBOutlet UISwitch *swWorking;
 @property (weak, nonatomic) IBOutlet UIDatePicker *dpStartDate;
 - (IBAction)swWorkingClicked:(id)sender;
+@property (weak, nonatomic) IBOutlet UIPickerView *pkDoctor;
 @end

@@ -11,8 +11,8 @@
 @implementation CreatProfileViewController
 @synthesize ua;
 @synthesize profile;
-
-
+@synthesize doctorList;
+@synthesize selectedRow;
 
 - (void)viewDidLoad
 {
@@ -28,9 +28,67 @@
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
     self.profile = [[PatientProfile alloc]init];
+    self.doctorList = [[NSMutableArray alloc]init];
     self.profile.currentlyWorking = @"YES";
+    
+    NSDictionary *newData = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithLong:self.ua.userId],@"userid",self.ua.username,@"username",self.ua.password,nil];
+    NSData * dataVal = [NSJSONSerialization dataWithJSONObject:newData options:kNilOptions error:nil];
+    
+    NSString *stringUrl = [NSString stringWithFormat:@"%@doctorlist",Url];
+    NSURL *url = [NSURL URLWithString:stringUrl];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    
+    
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [request setValue:[NSString stringWithFormat:@"%ul",(unsigned)[dataVal length]] forHTTPHeaderField:@"Content-length"];
+    [request setHTTPBody:dataVal];
+    
+    NSHTTPURLResponse *response = nil;
+    
+    NSData *result = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
+    
+    if ([response statusCode] >= 200 && [response statusCode] <= 300) {
+        id docList = [NSJSONSerialization JSONObjectWithData:result options:kNilOptions error:nil];
+        
+        if (docList) {
+            for (id object in docList) {
+                NSString *fName = [object objectForKey:@"firstname"];
+                NSString *lName = [object objectForKey:@"lastname"];
+                if (fName && lName) {
+                    NSString *name = [fName stringByAppendingString:lName];
+                    [self.doctorList addObject:name];
+                }
+            }
+        }
+    }
 }
 
+//Pickerview delegate
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    return 1;
+}
+
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    NSInteger count = [self.doctorList count];
+    return [self.doctorList count];
+}
+
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    return [self.doctorList objectAtIndex:row];
+}
+
+//- (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+//{
+//    return [self.doctorList objectAtIndex:row];
+//}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    selectedRow = row;
+}
 //Handle Keyboard layout when in landscapte orientation.
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -82,7 +140,7 @@
     
     NSInteger feet = [[_txtFeet text] integerValue];
     NSInteger inch = [[_txtInch text] integerValue];
-    if (!feet) {
+    if (feet) {
         self.profile.feet = feet;
         self.profile.inches = inch;
     }
