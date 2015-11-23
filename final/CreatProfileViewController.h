@@ -10,6 +10,7 @@
 #import "UserAccount.h"
 #import "PatientProfile.h"
 #import "Constants.h"
+#import "DecisionViewController.h"
 
 @interface CreatProfileViewController : UIViewController<UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
 {

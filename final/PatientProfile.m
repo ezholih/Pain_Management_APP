@@ -18,8 +18,9 @@
 -(BOOL)validateProfile:(PatientProfile *)profile
 {
     PatientProfile *p = profile;
-    if (!(p.firstName && p.lastName && p.gender && p.language && p.enthnicity
-         && p.enthnonym)) {
+    if ([p.firstName isEqualToString:@""] || [p.lastName isEqualToString:@""]
+          || [p.gender isEqualToString:@""] || [p.language isEqualToString:@""]
+          || [p.enthnicity isEqualToString:@""] || [p.enthnonym isEqualToString:@""]) {
         return NO;
     }
     

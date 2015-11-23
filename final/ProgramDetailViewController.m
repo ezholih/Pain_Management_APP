@@ -52,7 +52,7 @@
         self.playVideoButton.layer.cornerRadius = 10;
     }
     
-    self.pickerData = @[@"Satisfied",@"Normal",@"Not Satisfied"];
+    self.pickerData = @[@"Satisfied",@"Neutral",@"Not Satisfied"];
 //    self.pickerView.dataSource = self;
 //    self.pickerView.delegate = self;
 }

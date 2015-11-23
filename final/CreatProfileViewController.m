@@ -73,7 +73,7 @@
 
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
     NSInteger count = [self.doctorList count];
-    return [self.doctorList count];
+    return count;
 }
 
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
@@ -138,11 +138,21 @@
 
 - (IBAction)btnDoneClicked:(id)sender {
     
+    self.profile.userId = self.ua.userId;
+    self.profile.doctorId = self.selectedRow;
     NSInteger feet = [[_txtFeet text] integerValue];
     NSInteger inch = [[_txtInch text] integerValue];
     if (feet) {
         self.profile.feet = feet;
         self.profile.inches = inch;
+    }else{
+        [self alertStatus:@"Please enter data in all fields" :@"Invalid entry!" :0];
+    }
+    NSInteger weight = [[_txtWeight text] integerValue];
+    if (weight) {
+        self.profile.weight = weight;
+    }else{
+        [self alertStatus:@"Please enter data in all fields" :@"Invalid entry!" :0];
     }
     self.profile.firstName = [_txtFirstName text];
     self.profile.lastName = [_txtLastName text];
@@ -156,20 +166,25 @@
     self.profile.enthnonym = [_txtEnthnonym text];
     self.profile.enthnicity = [_txtEnthnity text];
     if ([self.profile validateProfile:self.profile]) {
-        NSDictionary *myprofiledictionary = [NSDictionary dictionaryWithObjectsAndKeys:profile.firstName,@"firstname",
+        NSDictionary *myprofiledictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                                             profile.firstName,@"firstname",
                                              profile.lastName,@"lastname",
                                              profile.gender,@"gender",
-                                             [NSNumber numberWithLong:profile.userId],@"userid",
                                              profile.language,@"language",
                                              profile.startDate,@"date",
                                              profile.enthnonym,@"enthnonym",
                                              profile.enthnicity,@"enthnicity",
                                              profile.currentlyWorking,@"currentlyWorking",
+                                             [NSNumber numberWithInteger:profile.userId],@"userid",
+                                             [NSNumber numberWithLong:profile.doctorId],@"doctorid",
+                                             [NSNumber numberWithInteger:profile.feet],@"feet",
+                                             [NSNumber numberWithInteger:profile.inches],@"inches",
+                                             [NSNumber numberWithInteger:profile.weight],@"weight",
                                              nil];
         
         NSData *myprofiledata = [NSJSONSerialization dataWithJSONObject:myprofiledictionary options:kNilOptions error:nil];
         
-        NSString *stringUrl = [NSString stringWithFormat:@"%@editprofile",Url];
+        NSString *stringUrl = [NSString stringWithFormat:@"%@saveprofile",Url];
         NSURL *url = [NSURL URLWithString:stringUrl];
         
         NSMutableURLRequest *editProfileRequest = [NSMutableURLRequest requestWithURL:url];
@@ -187,6 +202,8 @@
         NSString *resultString = [[NSString alloc] initWithData:result encoding:NSUTF8StringEncoding];
         
         NSLog(@"%@",resultString);
+        
+        [self performSegueWithIdentifier:@"profile_done" sender:self];
     }else{
         [self alertStatus:@"Please enter data in all fields" :@"Invalid entry!" :0];
     }
@@ -194,7 +211,12 @@
 }
 
 - (IBAction)swWorkingClicked:(id)sender {
-    self.profile.currentlyWorking = @"NO";
+    if ([self.profile.currentlyWorking isEqualToString:@"YES"]) {
+        self.profile.currentlyWorking = @"NO";
+    }else{
+        self.profile.currentlyWorking = @"YES";
+    }
+    
 }
 
 - (void) alertStatus:(NSString *)msg :(NSString *)title :(int) tag
@@ -206,6 +228,13 @@
                                               otherButtonTitles:nil, nil];
     alertView.tag = tag;
     [alertView show];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"profile_done"]){
+        DecisionViewController *dvc= (DecisionViewController*)[segue destinationViewController];
+        dvc.ua =self.ua;
+    }
 }
 
 @end
