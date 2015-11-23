@@ -15,5 +15,14 @@
     return [NSString stringWithFormat:@"\n doctorId : %li, \nfirst Name: %@, \nsStart Date: %@ , \nGender: %@", (long)self.doctorId,self.firstName,self.startDate, self.gender];
 }
 
-
+-(BOOL)validateProfile:(PatientProfile *)profile
+{
+    PatientProfile *p = profile;
+    if (!(p.firstName && p.lastName && p.gender && p.language && p.enthnicity
+         && p.enthnonym)) {
+        return NO;
+    }
+    
+    return YES;
+}
 @end

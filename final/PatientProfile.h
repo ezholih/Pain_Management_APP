@@ -46,7 +46,7 @@
 @property(nonatomic) NSInteger inches;
 @property(nonatomic) NSInteger weight;
 
-
+-(BOOL)validateProfile:(PatientProfile *)profile;
 @end
 
 
