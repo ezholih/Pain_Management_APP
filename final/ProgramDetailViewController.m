@@ -39,7 +39,12 @@
     self.done.hidden = YES;
     self.playVideoButton.hidden = YES;
     self.programName.text = data.programName;
-    self.programDescription.text = data.programDetails;
+    if (data.programDetails == NULL) {
+        self.programDescription.text = data.programDetails;
+    }else{
+        self.programDescription.text = @"";
+    }
+    
     self.programDescription.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg18.jpg"]];
     self.programDescription.layer.borderWidth = 5.0f;
     self.programDescription.layer.borderColor = [[UIColor grayColor] CGColor];
